@@ -4,6 +4,14 @@ $(document).ready(function () {
 
         var queryUrl = ""
 
+        function buildQueryURL() {
+
+            var startUrl = "https://http://api.giphy.com/v1/gifs/trending?"
+            var apiKey = "jr4aVK0FtI0qBftQR9M21U0ixSWkXggu&"
+            var
+
+        };
+
         $.ajax({
                 url = queryUrl,
                 method = 'GET'

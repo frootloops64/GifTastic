@@ -1,20 +1,32 @@
 $(document).ready(function () {
 
-    $(".animal-btn").on("click", function () {
+    $("#submit-btn").on("click", function () {
 
-        var queryUrl = startUrl + apiKey + 
+        var query = $('#animal').val().trim();
+        console.log(query);
 
         function buildQueryURL() {
 
-            var startUrl = "https://http://api.giphy.com/v1/gifs/trending?"
-            var apiKey = "jr4aVK0FtI0qBftQR9M21U0ixSWkXggu&"
-            var 
+            var startUrl = "api.giphy.com/v1/gifs/search?";
+            var apiKey = "api_key=jr4aVK0FtI0qBftQR9M21U0ixSWkXggu&q=";
+            var limit = "limit=1&";
+            var rating = "rating=";
+            var ratingClassification = ["G", "PG", "PG-13", "R"];
+            var contentRating = ''
+
+            for (i = 0; i < ratingClassification.length; i++) {
+                contentRating = i;
+            };
+            console.log(contentRating);
 
         };
 
+        var queryUrl = startUrl + apiKey + query + "&" + limit + rating + contentRating;
+        console.log(queryUrl);
+
         $.ajax({
-                url = queryUrl,
-                method = 'GET'
+                url: queryUrl,
+                method: 'GET'
             })
             .then(function (response) {
 

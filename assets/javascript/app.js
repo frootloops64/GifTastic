@@ -9,8 +9,6 @@ $(document).ready(function () {
 
             var startUrl = "api.giphy.com/v1/gifs/search?";
             var apiKey = "api_key=jr4aVK0FtI0qBftQR9M21U0ixSWkXggu&q=";
-            var limit = "limit=1&";
-            var rating = "rating=";
             var ratingClassification = ["G", "PG", "PG-13", "R"];
             var contentRating = ''
 
@@ -21,7 +19,7 @@ $(document).ready(function () {
 
         };
 
-        var queryUrl = startUrl + apiKey + query + "&" + limit + rating + contentRating;
+        var queryUrl = startUrl + apiKey + query + "&" + contentRating;
         console.log(queryUrl);
 
         $.ajax({
